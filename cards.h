@@ -102,3 +102,10 @@ class t_full_deck
 int init_full_deck( void ) 
 {
 };
+
+// An array of all different cards
+// It is ordered in alphabetical and ascending
+// order.
+t_full_deck full_deck_arr[52] = { 
+    // Fill in or remove
+};

@@ -14,13 +14,29 @@
 //--------------------------------------------
 
 #include "cards.h";
+#include "players.h";
+#include <bits/stdc++.h>;
 
+using namespace std;
+
+// Delete in future if implementing choice of 1-5
+// AI players in startup
 int NUM_PLAYERS = 4;
-// t_full_deck full_deck;
+
+// Our global full deck
+// We should only need one.
+t_full_deck full_deck;
+
+// Our global instance of all players' decks of cards.
+// Again, we should only need one. 
+// It contains six players for future plans,
+// at the conception of the project we will only 
+// have the option for 4 players.
+t_all_players all_players;
 
 // Initialise the properties of a deck of cards for a game of shed
 // ie values and special actions
-int init_full_deck( t_full_deck full_deck ) 
+int init_full_deck( void ) 
 {
     // Clubs Values
     full_deck.clubs.one.value = 1;
@@ -120,10 +136,56 @@ int init_full_deck( t_full_deck full_deck )
     full_deck.hearts.jack.special = JACK;
     full_deck.spades.jack.special = JACK;
 
-    return 1;
+    // Success
+    return 0;
 };
+ 
+// Shuffle array function (for array of all cards unshuffled)
+t_card* shuffle_array( t_card array[], int n )
+{
+    unsigned x = 0;
+    shuffle(array, array + n, default_random_engine(x));
+    
+    return array;
+};
+ 
 
 int deal_cards ( int NUM_PLAYERS ) 
 {
-    
+    // Create an array of all cards which we can randomise
+    // and then can assign each player a card from a fixed position.
+    // The array is sorted in alphabetical and then ascending order.
+    t_card card_arry[52] = {
+
+
+
+        // Clubs, ascending
+        full_deck.clubs.one, full_deck.clubs.two, full_deck.clubs.three, full_deck.clubs.four,
+        full_deck.clubs.five, full_deck.clubs.six, full_deck.clubs.seven, full_deck.clubs.eight,
+        full_deck.clubs.nine, full_deck.clubs.ten, full_deck.clubs.jack, full_deck.clubs.queen,
+        full_deck.clubs.king,
+
+        // Diamonds, ascending
+        full_deck.diamonds.one, full_deck.diamonds.two, full_deck.diamonds.three, full_deck.diamonds.four,
+        full_deck.diamonds.five, full_deck.diamonds.six, full_deck.diamonds.seven, full_deck.diamonds.eight,
+        full_deck.diamonds.nine, full_deck.diamonds.ten, full_deck.diamonds.jack, full_deck.diamonds.queen,
+        full_deck.diamonds.king,
+
+        // Hearts, ascending
+        full_deck.hearts.one, full_deck.hearts.two, full_deck.hearts.three, full_deck.hearts.four,
+        full_deck.hearts.five, full_deck.hearts.six, full_deck.hearts.seven, full_deck.hearts.eight,
+        full_deck.hearts.nine, full_deck.hearts.ten, full_deck.hearts.jack, full_deck.hearts.queen,
+        full_deck.hearts.king,
+
+        // Spades, ascending
+        full_deck.spades.one, full_deck.spades.two, full_deck.spades.three, full_deck.spades.four,
+        full_deck.spades.five, full_deck.spades.six, full_deck.spades.seven, full_deck.spades.eight,
+        full_deck.spades.nine, full_deck.spades.ten, full_deck.spades.jack, full_deck.spades.queen,
+        full_deck.spades.king };
+
+    // Now randomise it
+    shuffled_card_arry = shuffle_array( card_arry, sizeof( card_arry ) );
+
+    cout << shuffled_card_array;    // Temporary, stopping here to find best method of compilation
+                                    // This is to test that the code is working up to this point.
 };

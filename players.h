@@ -48,13 +48,13 @@ class t_player
 /**********************
  * Class to store all cards of all players as they're dealt
  *********************/
-class t_full_game_framework
+class t_all_players
 {
     public:
     t_player player_1;
     t_player player_2;
     t_player player_3;
     t_player player_4;
-    t_player player_5;
+    t_player player_5;  
     t_player player_6;
 };
