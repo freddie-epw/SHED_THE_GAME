@@ -15,7 +15,6 @@
 
 #include "cards.h";
 #include "players.h";
-#include <bits/stdc++.h>;
 
 using namespace std;
 
@@ -143,10 +142,7 @@ int init_full_deck( void )
 // Shuffle array function (for array of all cards unshuffled)
 t_card* shuffle_array( t_card array[], int n )
 {
-    unsigned x = 0;
-    shuffle(array, array + n, default_random_engine(x));
-    
-    return array;
+    // to be written
 };
  
 
